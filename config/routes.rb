@@ -1,9 +1,14 @@
 PerHour::Application.routes.draw do
+  root :to => 'pages#landing'
+  match "/dashboard" => "projects#index", :as => :dashboard
+  resources :timechunks
+
+  resources :projects
+
   devise_for :users
 
-  root :to => 'pages#index'
 
-  resources :pages
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

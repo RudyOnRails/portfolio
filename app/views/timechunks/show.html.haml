@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @timechunk.title
+%p
+  %b Description:
+  = @timechunk.description
+%p
+  %b Length:
+  = @timechunk.length
+%p
+  %b Project:
+  = @timechunk.project_id
+
+= link_to 'Edit', edit_timechunk_path(@timechunk)
+\|
+= link_to 'Back', timechunks_path

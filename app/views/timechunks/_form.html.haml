@@ -1,0 +1,22 @@
+= form_for @timechunk do |f|
+  -if @timechunk.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@timechunk.errors.count, "error")} prohibited this timechunk from being saved:"
+      %ul
+        - @timechunk.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :length
+    = f.number_field :length
+  .field
+    = f.label :project_id
+    = f.number_field :project_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,25 @@
+%h1 Listing timechunks
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Length
+    %th Project
+    %th
+    %th
+    %th
+
+  - @timechunks.each do |timechunk|
+    %tr
+      %td= timechunk.title
+      %td= timechunk.description
+      %td= timechunk.length
+      %td= timechunk.project_id
+      %td= link_to 'Show', timechunk
+      %td= link_to 'Edit', edit_timechunk_path(timechunk)
+      %td= link_to 'Destroy', timechunk, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Timechunk', new_timechunk_path
